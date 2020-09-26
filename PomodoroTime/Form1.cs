@@ -31,6 +31,13 @@ namespace PomodoroTime
       ResetBtn.Enabled = false;
 
       currentMin = work;
+     
+    }
+
+    public void Alert (string msg)
+    {
+      WorkNotify frm = new WorkNotify();
+      frm.showNotif(msg);
     }
 
     private void timer1_Tick(object sender, EventArgs e)
@@ -45,7 +52,7 @@ namespace PomodoroTime
       {
         if (currentMin == 0)
         {
-          // Notifikasi
+          Alert("test");
 
           timer1.Enabled = false;
           StartBtn.Text = "Start";
@@ -105,6 +112,11 @@ namespace PomodoroTime
       {
         StartBtn.Text = "Start";
       }
+    }
+
+    private void SettingsBtn_Click(object sender, EventArgs e)
+    {
+      MessageBox.Show("Coming soon!", "???", MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
 
     private void StartBtn_Click(object sender, EventArgs e)

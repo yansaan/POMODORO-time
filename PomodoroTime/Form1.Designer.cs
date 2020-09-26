@@ -29,21 +29,23 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
       this.StartBtn = new System.Windows.Forms.Button();
       this.MinLbl = new System.Windows.Forms.Label();
       this.SecLbl = new System.Windows.Forms.Label();
       this.TimeLbl = new System.Windows.Forms.Label();
       this.ResetBtn = new System.Windows.Forms.Button();
       this.SettingsBtn = new System.Windows.Forms.Button();
-      this.progressBar1 = new System.Windows.Forms.ProgressBar();
       this.Ambient = new System.Windows.Forms.CheckBox();
       this.timer1 = new System.Windows.Forms.Timer(this.components);
       this.timer2 = new System.Windows.Forms.Timer(this.components);
+      this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+      this.label1 = new System.Windows.Forms.Label();
       this.SuspendLayout();
       // 
       // StartBtn
       // 
-      this.StartBtn.Location = new System.Drawing.Point(102, 47);
+      this.StartBtn.Location = new System.Drawing.Point(26, 78);
       this.StartBtn.Name = "StartBtn";
       this.StartBtn.Size = new System.Drawing.Size(46, 23);
       this.StartBtn.TabIndex = 0;
@@ -65,7 +67,7 @@
       // 
       this.SecLbl.AutoSize = true;
       this.SecLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.SecLbl.Location = new System.Drawing.Point(101, 9);
+      this.SecLbl.Location = new System.Drawing.Point(91, 9);
       this.SecLbl.Name = "SecLbl";
       this.SecLbl.Size = new System.Drawing.Size(46, 31);
       this.SecLbl.TabIndex = 2;
@@ -74,7 +76,7 @@
       // TimeLbl
       // 
       this.TimeLbl.AutoSize = true;
-      this.TimeLbl.Location = new System.Drawing.Point(12, 86);
+      this.TimeLbl.Location = new System.Drawing.Point(168, 52);
       this.TimeLbl.Name = "TimeLbl";
       this.TimeLbl.Size = new System.Drawing.Size(46, 13);
       this.TimeLbl.TabIndex = 3;
@@ -82,7 +84,7 @@
       // 
       // ResetBtn
       // 
-      this.ResetBtn.Location = new System.Drawing.Point(102, 76);
+      this.ResetBtn.Location = new System.Drawing.Point(89, 78);
       this.ResetBtn.Name = "ResetBtn";
       this.ResetBtn.Size = new System.Drawing.Size(46, 23);
       this.ResetBtn.TabIndex = 4;
@@ -97,13 +99,7 @@
       this.SettingsBtn.TabIndex = 5;
       this.SettingsBtn.Text = "Settings";
       this.SettingsBtn.UseVisualStyleBackColor = true;
-      // 
-      // progressBar1
-      // 
-      this.progressBar1.Location = new System.Drawing.Point(0, 111);
-      this.progressBar1.Name = "progressBar1";
-      this.progressBar1.Size = new System.Drawing.Size(232, 10);
-      this.progressBar1.TabIndex = 6;
+      this.SettingsBtn.Click += new System.EventHandler(this.SettingsBtn_Click);
       // 
       // Ambient
       // 
@@ -125,13 +121,30 @@
       this.timer2.Interval = 1000;
       this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
       // 
+      // notifyIcon1
+      // 
+      this.notifyIcon1.BalloonTipText = "Test";
+      this.notifyIcon1.BalloonTipTitle = "Test";
+      this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+      this.notifyIcon1.Text = "notifyIcon1";
+      this.notifyIcon1.Visible = true;
+      // 
+      // label1
+      // 
+      this.label1.AutoSize = true;
+      this.label1.Location = new System.Drawing.Point(12, 119);
+      this.label1.Name = "label1";
+      this.label1.Size = new System.Drawing.Size(35, 13);
+      this.label1.TabIndex = 8;
+      this.label1.Text = "label1";
+      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(231, 119);
+      this.ClientSize = new System.Drawing.Size(231, 147);
+      this.Controls.Add(this.label1);
       this.Controls.Add(this.Ambient);
-      this.Controls.Add(this.progressBar1);
       this.Controls.Add(this.ResetBtn);
       this.Controls.Add(this.StartBtn);
       this.Controls.Add(this.SettingsBtn);
@@ -155,10 +168,11 @@
     private System.Windows.Forms.Label TimeLbl;
     private System.Windows.Forms.Button ResetBtn;
     private System.Windows.Forms.Button SettingsBtn;
-    private System.Windows.Forms.ProgressBar progressBar1;
     private System.Windows.Forms.CheckBox Ambient;
     private System.Windows.Forms.Timer timer1;
     private System.Windows.Forms.Timer timer2;
+    private System.Windows.Forms.NotifyIcon notifyIcon1;
+    private System.Windows.Forms.Label label1;
   }
 }
 
