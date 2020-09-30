@@ -110,6 +110,7 @@
       this.Ambient.TabIndex = 7;
       this.Ambient.Text = "Ambient";
       this.Ambient.UseVisualStyleBackColor = true;
+      this.Ambient.CheckedChanged += new System.EventHandler(this.Ambient_CheckedChanged);
       // 
       // timer1
       // 

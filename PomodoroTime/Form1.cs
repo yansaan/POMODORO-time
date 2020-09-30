@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace PomodoroTime
 {
@@ -31,7 +32,12 @@ namespace PomodoroTime
       ResetBtn.Enabled = false;
 
       currentMin = work;
-     
+    }
+
+    public string LocationFolder()
+    {
+      Folders Loc = new Folders();
+      return Loc.Locations;
     }
 
     public void Alert (string msg)
@@ -117,6 +123,11 @@ namespace PomodoroTime
     private void SettingsBtn_Click(object sender, EventArgs e)
     {
       MessageBox.Show("Coming soon!", "???", MessageBoxButtons.OK, MessageBoxIcon.Information);
+    }
+
+    private void Ambient_CheckedChanged(object sender, EventArgs e)
+    {
+      MessageBox.Show(LocationFolder());
     }
 
     private void StartBtn_Click(object sender, EventArgs e)
